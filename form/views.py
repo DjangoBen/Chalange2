@@ -5,10 +5,13 @@ from .models import Person
 
 def index(request):
     context = {"status": "first"}
-    if request.session['person']:
-        people = request.session['person']
-        context = {"name": people["name"], "surname": people["surname"], "status": people["status"]}
-    return render(request, "form/index.html", context)
+    try:
+        if request.session['person']:
+            people = request.session['person']
+            context = {"name": people["name"], "surname": people["surname"], "status": people["status"]}
+        return render(request, "form/index.html", context)
+    except BaseException:
+        return render(request, "form/index.html", context)
 
 
 def create(request):
