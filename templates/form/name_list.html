@@ -9,13 +9,13 @@
     <h2>Список користувачів</h2>
     <table class = "table">
         <thead>
-            <tr><th scope="col">Id</th><th scope="col">Імʼя</th><th scope="col">Прізвище</th><th scope="col">Емейл</th></tr>
+            <tr><th scope="col">Імʼя</th><th scope="col">Прізвище</th><th scope="col">Емейл</th></tr>
         </thead>
         {% if people %}
         <tbody>
             {% for person in people %}
             <tr>
-                <th scope="row">{{ person.name }}</th>
+                <td scope="row">{{ person.name }}</td>
                 <td>{{ person.surname }}</td>
                 <td>{{ person.email }}</td>
             </tr>
